@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Dashboard</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp" crossorigin="anonymous">
+    <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/js/bootstrap.bundle.min.js" integrity="sha384-qKXV1j0HvMUeCBQ+QVp7JcfGl760yU08IQ+GpUo5hlbpg51QRiuqHAJz8+BrxE/N" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/js/bootstrap.bundle.min.js" integrity="sha384-qKXV1j0HvMUeCBQ+QVp7JcfGl760yU08IQ+GpUo5hlbpg51QRiuqHAJz8+BrxE/N" crossorigin="anonymous"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://cdn.datatables.net/1.13.4/js/jquery.dataTables.js"></script>
+    <script type="text/javascript" src="https://cdn.datatables.net/1.10.15/js/jquery.dataTables.min.js"></script>
+    <script type="text/javascript" src="https://cdn.datatables.net/1.10.15/js/dataTables.jqueryui.min.js"></script>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <script src="https://cdn.datatables.net/1.13.4/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/buttons/2.3.6/js/dataTables.buttons.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/pdfmake.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/vfs_fonts.js"></script>
+    <script src="https://cdn.datatables.net/buttons/2.3.6/js/buttons.html5.min.js"></script>
+    <script src="https://cdn.datatables.net/buttons/2.3.6/js/buttons.print.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.3/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.min.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.15/css/dataTables.jqueryui.min.css"/>
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.4/css/jquery.dataTables.min.css" />
+    <link rel="stylesheet" href="https://cdn.datatables.net/buttons/2.3.6/css/buttons.dataTables.min.css" />
+
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker.min.css">
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+   <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    
+
+    <div class="main-container d-flex m-4">
+
+
+        <div class="offcanvas-lg offcanvas-start" tabindex="-1" id="offcanvasResponsive" aria-labelledby="offcanvasResponsiveLabel">
+
+          <div class="sidebar overflow-auto" id="side_nav">
+            <div class="fs-4 fw-bold d-none d-lg-block mb-4">Form Report Dashboard</div>
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title heading1" id="offcanvasResponsiveLabel">Form Report Dashboard</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#offcanvasResponsive" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <div class="flex-fill" >
+              <div class="select-form ">
+                <label class="heading2 fs-6">
+                  Select Form Name
+                </label>
+              
+               
+
+                <div class="dropdown mt-2 mb-3">
+                  <button class="btn btn-primary dropdown-toggle btn text-start" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    Select item
+                  </button>
+                  <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="#">
+                      <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="Checkme1" />
+                        <label class="form-check-label" for="Checkme1">form name 1</label>
+                      </div>
+                    </a></li>
+                    <li><a class="dropdown-item" href="#">
+                      <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="Checkme2" />
+                        <label class="form-check-label" for="Checkme1">form name 2</label>
+                      </div>
+                    </a></li>
+                    <li><a class="dropdown-item" href="#">
+                      <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="Checkme3" />
+                        <label class="form-check-label" for="Checkme1">form name 3</label>
+                      </div>
+                    </a></li>
+                  </ul>
+                </div>
+                
+                <label class="heading2 fs-6">
+                  Select Form URL
+                </label>
+                <div class="dropdown mt-2 mb-3">
+                  <button class="btn btn-primary dropdown-toggle btn text-start" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    Select item
+                  </button>
+                  <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="#">
+                      <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="Checkme1" />
+                        <label class="form-check-label" for="Checkme1">form url 1</label>
+                      </div>
+                    </a></li>
+                    <li><a class="dropdown-item" href="#">
+                      <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="Checkme2" />
+                        <label class="form-check-label" for="Checkme1">form url 2</label>
+                      </div>
+                    </a></li>
+                    <li><a class="dropdown-item" href="#">
+                      <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="Checkme3" />
+                        <label class="form-check-label" for="Checkme1">form url 3</label>
+                      </div>
+                    </a></li>
+                  </ul>
+                </div>
+              </div>
+        
+              <p class="heading2 fs-6 mt-3">
+                Filter
+              </p>
+              <div class="filter-form-1">
+                <label class="heading2 fs-6">Starts Date</label>
+                <div class="date mt-2 mb-3" id="datepicker">
+                  <input type="text" class="form-control" id="date" placeholder="Enter or select date"/>
+                  <span class="input-group-append">
+                  </span>
+                </div>
+                  
+                <label class="heading2 fs-6">End Date</label>
+                <div class="date mt-2 mb-3" id="datepicker-2">
+                  <input type="text" class="form-control" id="date" placeholder="Enter or select date"/>
+                  <span class="input-group-append">
+                  </span>
+                </div>
+              </div>
+        
+              <div class="filter-form-2">
+                <label class="heading2 fs-6">
+                  UTM Source
+                </label>
+                <select class="form-select mt-2 mb-3">
+                  <option selected>Select item</option>
+                  <option value="1">utm source 2</option>
+                  <option value="2">utm source 3</option>
+                  <option value="3">utm source 4</option>
+                </select>
+        
+                <label class="heading2">
+                  UTM Medium
+                </label>
+                <select class="form-select mt-2 mb-3">
+                  <option selected>Select item</option>
+                  <option value="1">utm medium 2</option>
+                  <option value="2">utm medium 3</option>
+                  <option value="3">utm medium 4</option>
+                </select>
+        
+                <label class="heading2 fs-6">
+                  UTM Campaign
+                </label>
+                <select class="form-select mt-2 mb-3">
+                  <option selected>Select item</option>
+                  <option value="1">utm campaign 2</option>
+                  <option value="2">utm campaign 3</option>
+                  <option value="3">utm campaign 4</option>
+                </select>
+        
+              </div>
+            </div>
+          </div>
+        </div> 
+      </div>
+      <div class="container content">
+        <button class="btn btn-primary d-lg-none d-block mb-4" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasResponsive" aria-controls="offcanvasResponsive">Open Filter</button>
+
+        <div class="alert alert-primary alert-dismissible fade show d-inline-flex" role="alert">
+          <strong>Form Name 1</strong>. https://form-name-1.com.
+          <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+       
+        <div class="row row-cols-lg-2 row-cols-1">
+          <div class="col">
+            <div class="alldata d-flex flex-column">
+              <p class="heading2 fs-6">All Data</p>
+              <div class="alldata-cont d-flex">
+                <div class="alldata-detail">
+                  <p class="heading2 fs-6 const">Total Submission</p>
+                  <p class="number fs-2">1.829.002</p>
+                </div>
+                <div class="alldata-detail">
+                  <p class="heading2 fs-6 const">Success Submission</p>
+                  <p class="number fs-2">1.829.002</p>
+                </div>
+                <div class="alldata-detail alldata-detail-right">
+                  <p class="heading2 fs-6 const">Success Rate</p>
+                  <p class="number fs-2">57%</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="alldata d-flex flex-column">
+              <p class="heading2 fs-6">Filtered Data</p>
+              <div class="alldata-cont d-flex">
+                <div class="alldata-detail">
+                  <p class="heading2 fs-6 const">Total Submission</p>
+                  <p class="number fs-2">1.829.002</p>
+                </div>
+                <div class="alldata-detail">
+                  <p class="heading2 fs-6 const">Success Submission</p>
+                  <p class="number fs-2">1.829.002</p>
+                </div>
+                <div class="alldata-detail alldata-detail-right">
+                  <p class="heading2 fs-6 const">Success Rate</p>
+                  <p class="number fs-2">57%</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="graph-section d-flex flex-column">
+          <div class="d-flex justify-content-between">
+            <p class="heading2 fs-6">Submission Chart</p>
+            <a href="#" id="downloadPdf" class="button-export-1">Export PDF</a>
+          </div>
+  
+          <div class="graph" id="reportPage">
+            <div>
+              <canvas id="myChart"></canvas>
+            </div>
+          </div>
+        </div>
+
+        <div class="table-section d-flex flex-column">
+
+          <div class="d-flex justify-content-between mb-4">
+           <div class="">
+             <p class="heading2 fs-6">Data Detail</p>
+           </div>
+           <div class="d-flex">
+            <div class="">
+              <button class="button-option-select">All Submission</button>
+            </div>
+            <div class="ms-2">
+              <button class="button-option">Success Submission</button>
+            </div>
+           </div>
+           </div>
+           
+   
+          <div class="table table-responsive">
+           <table id="example" class="table" style="width:100%">
+             <thead>
+                 <tr>
+                     <th>ID</th>
+                     <th>Name</th>
+                     <th>Position</th>
+                     <th>Salary</th>
+                     <th>Start date</th>
+                 </tr>
+             </thead>
+            </table>
+           </div>
+      </div>
+    </div>
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.3/jspdf.debug.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="js.js"></script>
+
+
+  </body>
+</html>
