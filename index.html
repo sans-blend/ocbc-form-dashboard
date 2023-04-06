@@ -5,7 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Dashboard</title>
 
+
+
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.7/dist/umd/popper.min.js"></script>
     <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/js/bootstrap.bundle.min.js" integrity="sha384-qKXV1j0HvMUeCBQ+QVp7JcfGl760yU08IQ+GpUo5hlbpg51QRiuqHAJz8+BrxE/N" crossorigin="anonymous"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/js/bootstrap.bundle.min.js" integrity="sha384-qKXV1j0HvMUeCBQ+QVp7JcfGl760yU08IQ+GpUo5hlbpg51QRiuqHAJz8+BrxE/N" crossorigin="anonymous"></script>
@@ -31,53 +34,81 @@
     <link rel="stylesheet" href="https://cdn.datatables.net/buttons/2.3.6/css/buttons.dataTables.min.css" />
 
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker.min.css">
-   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+   <script src="https://kit.fontawesome.com/07012de21a.js" crossorigin="anonymous"></script>
 
    <link rel="stylesheet" href="style.css">
   </head>
   <body>
+
+    <nav class="navbar sticky-top bg-body-tertiary border-bottom pb-3 pt-3 ps-3 pe-3">
+      <div class="container-fluid">
+        <div class="d-flex align-items-center">
+          <button class="btn btn-light d-lg-none d-block" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasResponsive" aria-controls="offcanvasResponsive"><i class="fa-solid fa-bars"></i></button>
+          <img class="me-3" style="height: 50px;" src="img/ocbc-logo2.png">
+          <!-- <a class="navbar-brand fw-bold fs-4" href="#">Form Report Dashboard</a> -->
+        </div>
+        <div class="">
+        <div class="input-group">
+          <select class="form-select" aria-label="Default select example" id="calendar-input-type" name="calendar-input-type">
+            <option value="daily" selected>Daily</option>
+            <option value="weekly">Weekly</option>
+            <option value="monthly">Monthly</option>
+            <option value="yearly">Yearly</option>
+          </select>
+          <div class="form-floating w-25">
+            <input type="date" class="form-control" id="input-start" name="input-end" placeholder="Start Date">
+            <label for="floatingInput1">Start</label>
+          </div>
+          <div class="form-floating w-25">
+          <input type="date" class="form-control" id="input-end" name="input-end" placeholder="End Date">
+          <label for="floatingInput2">End</label>
+          </div>
+          <button class="btn btn-primary"><i class="fa-solid fa-check" style="color: #ffffff;"></i></button>
+        </div>
+      </div>
+      </div>
+    </nav>
     
 
     <div class="main-container d-flex m-4">
 
+      <div class="offcanvas-lg offcanvas-start me-4" tabindex="-1" id="offcanvasResponsive" aria-labelledby="offcanvasResponsiveLabel" style="width: 25%;">
 
-        <div class="offcanvas-lg offcanvas-start" tabindex="-1" id="offcanvasResponsive" aria-labelledby="offcanvasResponsiveLabel">
-
-          <div class="sidebar overflow-auto" id="side_nav">
-            <div class="fs-4 fw-bold d-none d-lg-block mb-4">Form Report Dashboard</div>
+        <div class="sidebar overflow-auto vh-100 position-fixed " id="side_nav">
+            
           <div class="offcanvas-header">
             <h5 class="offcanvas-title heading1" id="offcanvasResponsiveLabel">Form Report Dashboard</h5>
             <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#offcanvasResponsive" aria-label="Close"></button>
           </div>
           <div class="offcanvas-body">
             <div class="flex-fill" >
-              <div class="select-form ">
+             
+              <div class="select-form mb-3">
+                
                 <label class="heading2 fs-6">
                   Select Form Name
                 </label>
               
-               
-
                 <div class="dropdown mt-2 mb-3">
-                  <button class="btn btn-primary dropdown-toggle btn text-start" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  <button class="btn btn-primary dropdown-toggle btn text-start" type="button" data-bs-toggle="dropdown" aria-expanded="false" >
                     Select item
                   </button>
                   <ul class="dropdown-menu">
                     <li><a class="dropdown-item" href="#">
                       <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="" id="Checkme1" />
+                        <input class="form-check-input checkbox-select-form" type="checkbox" value="Form Name 1" id="AlertCheckBox1"/>
                         <label class="form-check-label" for="Checkme1">form name 1</label>
                       </div>
                     </a></li>
                     <li><a class="dropdown-item" href="#">
                       <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="" id="Checkme2" />
+                        <input class="form-check-input checkbox-select-form" type="checkbox" value="Form Name 2" id="AlertCheckBox2" />
                         <label class="form-check-label" for="Checkme1">form name 2</label>
                       </div>
                     </a></li>
                     <li><a class="dropdown-item" href="#">
                       <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="" id="Checkme3" />
+                        <input class="form-check-input checkbox-select-form" type="checkbox" value="Form Name 3" id="AlertCheckBox3" />
                         <label class="form-check-label" for="Checkme1">form name 3</label>
                       </div>
                     </a></li>
@@ -117,7 +148,7 @@
               <p class="heading2 fs-6 mt-3">
                 Filter
               </p>
-              <div class="filter-form-1">
+              <!-- <div class="filter-form-1">
                 <label class="heading2 fs-6">Starts Date</label>
                 <div class="date mt-2 mb-3" id="datepicker">
                   <input type="text" class="form-control" id="date" placeholder="Enter or select date"/>
@@ -131,13 +162,17 @@
                   <span class="input-group-append">
                   </span>
                 </div>
-              </div>
+
+                <div>
+                  <button type="button" class="btn btn-primary"> Filter by Date</button>
+                </div>
+              </div> -->
         
               <div class="filter-form-2">
                 <label class="heading2 fs-6">
                   UTM Source
                 </label>
-                <select class="form-select mt-2 mb-3">
+                <select class="form-select mt-2 mb-3" id="select-utm-source">
                   <option selected>Select item</option>
                   <option value="1">utm source 2</option>
                   <option value="2">utm source 3</option>
@@ -147,7 +182,7 @@
                 <label class="heading2">
                   UTM Medium
                 </label>
-                <select class="form-select mt-2 mb-3">
+                <select class="form-select mt-2 mb-3" id="select-utm-medium">
                   <option selected>Select item</option>
                   <option value="1">utm medium 2</option>
                   <option value="2">utm medium 3</option>
@@ -157,42 +192,45 @@
                 <label class="heading2 fs-6">
                   UTM Campaign
                 </label>
-                <select class="form-select mt-2 mb-3">
+                <select class="form-select mt-2 mb-3" id="select-utm-campaign">
                   <option selected>Select item</option>
                   <option value="1">utm campaign 2</option>
                   <option value="2">utm campaign 3</option>
                   <option value="3">utm campaign 4</option>
                 </select>
+
+                <button class="btn btn-primary"> Apply Filter</button>
         
               </div>
+
+              
             </div>
           </div>
         </div> 
       </div>
-      <div class="container content">
-        <button class="btn btn-primary d-lg-none d-block mb-4" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasResponsive" aria-controls="offcanvasResponsive">Open Filter</button>
-
-        <div class="alert alert-primary alert-dismissible fade show d-inline-flex" role="alert">
-          <strong>Form Name 1</strong>. https://form-name-1.com.
-          <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-        </div>
+      
+      <div class="container content" style="width: 75%;">
        
-        <div class="row row-cols-lg-2 row-cols-1">
+
+        <div class="d-inline-flex" id="AlertPlaceholder"></div>
+       
+       
+        <div class="row row-cols-xl-2 row-cols-1">
           <div class="col">
             <div class="alldata d-flex flex-column">
               <p class="heading2 fs-6">All Data</p>
               <div class="alldata-cont d-flex">
                 <div class="alldata-detail">
-                  <p class="heading2 fs-6 const">Total Submission</p>
-                  <p class="number fs-2">1.829.002</p>
+                  <p class="heading2 fs-6 const">Total Submission <img class="question-icon" src="img/question-icon.png" data-bs-toggle="tooltip" data-bs-title="Semua submission data."></p> 
+                  <p class="number fs-2" id="total_submission-all">1.829.002</p>
                 </div>
                 <div class="alldata-detail">
-                  <p class="heading2 fs-6 const">Success Submission</p>
-                  <p class="number fs-2">1.829.002</p>
+                  <p class="heading2 fs-6 const">Success Submission <img class="question-icon" src="img/question-icon.png" data-bs-toggle="tooltip" data-bs-title="Submission data yang sudah diverifikasi melalui email oleh nasabah."></p>
+                  <p class="number fs-2" id="sucess_submission-all">1.829.002</p>
                 </div>
                 <div class="alldata-detail alldata-detail-right">
-                  <p class="heading2 fs-6 const">Success Rate</p>
-                  <p class="number fs-2">57%</p>
+                  <p class="heading2 fs-6 const">Success Rate <img class="question-icon" src="img/question-icon.png" data-bs-toggle="tooltip" data-bs-title="Persentase perbandingan jumlah Sucess Submission (SS) dan Total Submission (TS) ((SS/TS) x 100%)."></p>
+                  <p class="number fs-2" id="success_rate-all">57%</p>
                 </div>
               </div>
             </div>
@@ -202,16 +240,16 @@
               <p class="heading2 fs-6">Filtered Data</p>
               <div class="alldata-cont d-flex">
                 <div class="alldata-detail">
-                  <p class="heading2 fs-6 const">Total Submission</p>
-                  <p class="number fs-2">1.829.002</p>
+                  <p class="heading2 fs-6 const">Total Submission <img class="question-icon" src="img/question-icon.png" data-bs-toggle="tooltip" data-bs-title="Semua submission data."></p>
+                  <p class="number fs-2" id="total_submission-filter">1.829.002</p>
                 </div>
                 <div class="alldata-detail">
-                  <p class="heading2 fs-6 const">Success Submission</p>
-                  <p class="number fs-2">1.829.002</p>
+                  <p class="heading2 fs-6 const">Success Submission <img class="question-icon" src="img/question-icon.png" data-bs-toggle="tooltip" data-bs-title="Submission data yang sudah diverifikasi melalui email oleh nasabah."></p>
+                  <p class="number fs-2" id="success_submission-filter">1.829.002</p>
                 </div>
                 <div class="alldata-detail alldata-detail-right">
-                  <p class="heading2 fs-6 const">Success Rate</p>
-                  <p class="number fs-2">57%</p>
+                  <p class="heading2 fs-6 const">Success Rate <img class="question-icon" src="img/question-icon.png" data-bs-toggle="tooltip" data-bs-title="Persentase perbandingan jumlah Sucess Submission (SS) dan Total Submission (TS) ((SS/TS) x 100%)."></p>
+                  <p class="number fs-2" id="success_rate-filter">57%</p>
                 </div>
               </div>
             </div>
@@ -221,7 +259,7 @@
         <div class="graph-section d-flex flex-column">
           <div class="d-flex justify-content-between">
             <p class="heading2 fs-6">Submission Chart</p>
-            <a href="#" id="downloadPdf" class="button-export-1">Export PDF</a>
+            <a href="#" id="downloadPdf" class="btn btn-primary">Export PDF</a>
           </div>
   
           <div class="graph" id="reportPage">
@@ -235,28 +273,31 @@
 
           <div class="d-flex justify-content-between mb-4">
            <div class="">
-             <p class="heading2 fs-6">Data Detail</p>
+             <p class="fs-6 fw-bold">Data Detail</p>
            </div>
+           
            <div class="d-flex">
-            <div class="">
-              <button class="button-option-select">All Submission</button>
+            <div class="btn-group" role="group" aria-label="Vertical radio toggle button group">
+              <input type="radio" class="btn-check" name="vbtn-radio" id="vbtn-radio1" autocomplete="off" checked>
+              <label class="btn btn-outline-primary" for="vbtn-radio1">All Submission</label>
+              <input type="radio" class="btn-check" name="vbtn-radio" id="vbtn-radio2" autocomplete="off">
+              <label class="btn btn-outline-primary" for="vbtn-radio2">Success Submission</label>
+        
             </div>
-            <div class="ms-2">
-              <button class="button-option">Success Submission</button>
-            </div>
+            
            </div>
            </div>
            
    
           <div class="table table-responsive">
-           <table id="example" class="table" style="width:100%">
+           <table id="form-graph" class="table" style="width:100%">
              <thead>
                  <tr>
                      <th>ID</th>
                      <th>Name</th>
                      <th>Position</th>
                      <th>Salary</th>
-                     <th>Start date</th>
+                     <th>Date</th>
                  </tr>
              </thead>
             </table>
@@ -264,11 +305,117 @@
       </div>
     </div>
 
-
+   
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.3/jspdf.debug.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <script src="js.js"></script>
+<!-- 
+<script>
+  const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
+const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
+
+</script>
+
+<script>
+  function calenderInputChange() {
+    var inputBoxStart = document.getElementById('input-start');
+    var inputBoxEnd = document.getElementById('input-end');
+    if (this.value == 'daily') {
+      inputBoxStart.type = 'date'
+      inputBoxEnd.type = 'date'
+    } else if (this.value == 'weekly') {
+      inputBoxStart.type = 'week'
+      inputBoxEnd.type = 'week'
+    } else if (this.value == 'monthly') {
+      inputBoxStart.type = 'month'
+      inputBoxEnd.type = 'month'
+    } else {
+      inputBoxStart.type = 'number'
+      inputBoxStart.value = '2022'
+      inputBoxEnd.type = 'number'
+      inputBoxEnd.value = '2023'
+    }
+  }
+
+  document.getElementById('calendar-input-type').addEventListener('change', calenderInputChange);
+</script>
+
+<script>
+const alertPlaceholder = document.getElementById('AlertPlaceholder')
+const appendAlert = (message, type, id) => {
+  const wrapper = document.createElement('div')
+  wrapper.innerHTML = [
+    `<div class=" me-4 alert alert-${type} alert-dismissible d-inline-flex" role="alert" id="${id}">`,
+    `   <div>${message}</div>`,
+    '   <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>',
+    '</div>'
+  ].join('')
+
+  alertPlaceholder.append(wrapper)
+}
 
 
+$(function()
+    {
+      $('#AlertCheckBox1').change(function()
+      {
+        if ($(this).is(':checked')) {
+           // Do something...
+           appendAlert(AlertCheckBox1.value, 'primary', 'test1');
+        } else {
+          const alertElement = document.getElementById("test1");
+          alertElement.remove();
+        };
+      });
+    });
+
+    $(function()
+    {
+      $('#AlertCheckBox2').change(function()
+      {
+        if ($(this).is(':checked')) {
+           // Do something...
+           appendAlert(AlertCheckBox2.value, 'primary', 'test2');
+        } else {
+          const alertElement = document.getElementById("test2");
+          alertElement.remove();
+        };
+      });
+    });
+
+
+    $(function()
+    {
+      $('#AlertCheckBox3').change(function()
+      {
+        if ($(this).is(':checked')) {
+           // Do something...
+           appendAlert(AlertCheckBox3.value, 'primary', 'test3');
+        } else {
+          const alertElement = document.getElementById("test3");
+          alertElement.remove();
+        };
+      });
+    });
+
+
+
+</script>
+
+<script>
+  const dataChangeTrigger1 = document.getElementById('vbtn-radio2')
+  if (dataChangeTrigger1) {
+  dataChangeTrigger1.addEventListener('click', () => {
+   table.ajax.url('/data-success.txt').load();
+  })
+}
+
+const dataChangeTrigger2 = document.getElementById('vbtn-radio1')
+  if (dataChangeTrigger2) {
+  dataChangeTrigger2.addEventListener('click', () => {
+   table.ajax.url('/data-all.txt').load();
+  })
+}
+</script> -->
   </body>
 </html>
