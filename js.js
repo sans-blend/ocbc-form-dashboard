@@ -97,6 +97,30 @@ const ctx = document.getElementById('myChart');
     } );
 
 
+   var table1 =  $('#form-graph1').DataTable( {
+    dom: 'BRfrtlip',
+    buttons: [
+        'csv',
+        'excel'
+    ],
+
+    // lengthMenu: [
+    //     [10, 25, 50, -1],
+    //     [10, 25, 50, 'All'],
+    // ],
+
+    ajax: "data-success.txt",
+    columns: [
+    { data: "id"},
+    { data: "name"},
+    { data: "position"},
+    { data: "salary"},
+    { data: "start_date"}
+    ]
+} );
+
+
+
 
 
 
